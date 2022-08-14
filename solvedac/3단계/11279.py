@@ -2,7 +2,6 @@ import sys
 import heapq
 n = int(sys.stdin.readline())
 heap = []
-li = []
 for _ in range(n):
     m = int(sys.stdin.readline())
     if m == 0:

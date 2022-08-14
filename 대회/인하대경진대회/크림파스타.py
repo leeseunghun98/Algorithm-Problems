@@ -19,6 +19,5 @@ for i in range(1, n):
         dp[i][2] = dp[i][1] - dp[i][0]
     else:
         dp[i][2] = dp[i-1][2]
-print(dp)
 for i in dp:
     print(i[2], end=" ")

@@ -11,3 +11,13 @@ for i in graph:
     for j in i:
         w.append(q[j])
     li.append(w)
+result = [0] * (n+1)
+def solve(start_node):
+    if len(li[start_node]) == 0:
+        result[start_node] = 1
+        return 1
+    elif len(li[start_node]) == 1:
+        result[start_node] = solve(graph[start_node][0])
+        return result[start_node]
+    
+    

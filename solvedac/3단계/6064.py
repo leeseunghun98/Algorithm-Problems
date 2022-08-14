@@ -5,7 +5,7 @@ for _ in range(n):
     a = x
     b = y
     if x == 1 and y == 1:
-        print(0)
+        print(1)
     else:
         while True:
             if x > a + N * M and y > b + N * M:
