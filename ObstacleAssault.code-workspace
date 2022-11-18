@@ -1,0 +1,18 @@
+{
+  "folders": [
+	{
+		"name": "ObstacleAssault",
+		"path": "D:/UE5 Games/ObstacleAssault"
+	},
+	{
+		"name": "UE5",
+		"path": "D:/Unreal Engine/UE_5.0"
+	}
+],
+  "settings": {
+    "typescript.tsc.autoDetect": "off"
+  },
+  "extensions": {
+    "recommendations": ["ms-vscode.cpptools", "ms-dotnettools.csharp"]
+  }
+}

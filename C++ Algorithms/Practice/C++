@@ -1,0 +1,43 @@
+C++ 입출력 속도 향상 방법
+scanf(), printf() 사용하기
+endl 절대 사용 금지!!
+ios_base::sync_with_stdio(false) , cin.tie(NULL) 사용하기
+
+endl 대신 개행 문자("\n")를 사용
+- 설명
+endl은 개행문자를 출력할 뿐만 아니라 출력 버퍼를 비우는 역할까지 합니다.
+정리하자면 다음과 같습니다.
+버퍼를 비우지 않아도 되므로 속도가 향상된다.
+
+입출력이 많은 문제에서 cin, cout을 사용해야 하는 경우
+=> ios_base::sync_with_stdio(false), cin.tie(nullptr) 사용
+(1) ios_base::sync_with_stdio(false)
+의미 : C Stream과 C++ Stream 사이의 동기화를 끊는다.
+C Stream과 C++ 스트림은 서로 분리 되어 있습니다. 
+그리고 기본적으로 이 둘은 서로 동기화 되어 있습니다. 
+동기화를 할 경우 C++ 스트림은 스레드로부터 안전(Thread Safe)합니다. 
+그렇기 때문에 동기화를 끊는다면, Stream들은 독립적인 버퍼를 갖게되어 속도 향상이 있지만, 
+C와 C++의 입출력방식을 혼용해서 쓰는 것이 굉장히 위험해집니다.
+=> 동기화할 필요가 없으므로 속도가 향상된다.
+동기화 하지 않고 독립적인 버퍼를 사용하게 되므로 C Stream과 C++ Stream을 혼용해서 사용하면 안된다.
+
+cin.tie(nullptr)
+의미 : cin과 cout의 묶음(tie)을 푼다.
+- 설명
+기본적으로 cin과 cout은 묶여(tie)있습니다. 스트림이 묶여 있을 경우, I/O작업 변경 시 자동으로 버퍼를 비웁(flush)니다.
+std::cout << "Enter name:";
+std::cin >> name;
+- tie 되어 있을 경우 : "Enter name:" 이라는 출력 문구가 출력 된 이후 입력이 가능
+- untie 되어 있을 경우 : 입력 전 출력을 보장할 수 없으므로 Enter name이 버퍼에서 출력되기 이전에 입력이 먼저 될 수 있다.
+코딩 테스트와 같이 사용자와의 상호작용이 필요 없고 출력만을 중요시 하는 상황에서 사용하면 속도 향상을 기대할 수 있다.
+
+STL 의 특정 컨테이너 : pair, list, vector, stack, queue, deque, priority_queue, set, map 등
+c++ 표준 라이브러리 : https://ko.wikipedia.org/wiki/C%2B%2B_%ED%91%9C%EC%A4%80_%EB%9D%BC%EC%9D%B4%EB%B8%8C%EB%9F%AC%EB%A6%AC#%EC%BB%A8%ED%85%8C%EC%9D%B4%EB%84%88
+
+
+
+
+    int arr[] = {0,};
+    배열 0으로 전부 초기화
+
+    int박으면 소수점 아래 버림
