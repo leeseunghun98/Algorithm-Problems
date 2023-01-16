@@ -15,7 +15,7 @@ def dfs(idx, ret):
     if idx < l-1:
         dfs(idx+2, cal(opers[idx], ret, cal(opers[idx+1], nums[idx+1], nums[idx+2])))
     dfs(idx+1, cal(opers[idx], ret, nums[idx+1]))
-    
+
 def cal(operand, a, b):
     if operand == '*':
         return a * b
